@@ -16,15 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        
         if User.currentUser != nil {
             print ("There is  current User")
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyBoard.instantiateViewControllerWithIdentifier("MenuViewController")
+            let vc = storyBoard.instantiateViewControllerWithIdentifier("HamburgerViewController")
             
             window?.rootViewController = vc
         }
-
         
         let hamburgerViewController = window!.rootViewController as! HamburgerViewController
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)

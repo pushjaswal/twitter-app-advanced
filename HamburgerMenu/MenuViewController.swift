@@ -26,6 +26,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         greenNavigationontroller = storyBoard.instantiateViewControllerWithIdentifier("GreenNavigationController")

@@ -11,6 +11,7 @@ import UIKit
 class GreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var profilePictureImageView: UIImageView!
     
 
     var tweets: [Tweet]!
@@ -22,6 +23,8 @@ class GreenViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
+        
+        profilePictureImageView.setImageWithURL((User.currentUser?.profileURL)!)
         
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), forControlEvents: UIControlEvents.ValueChanged)
